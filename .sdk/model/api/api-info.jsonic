@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://kanye.rest/"
+      }
+      description: "A free REST API for random Kanye West quotes (Kanye as a Service)"
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.kanye.rest"
+        }
+      ]
+      title: "kanye.rest"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

@@ -1,0 +1,22 @@
+{
+  "existing": {
+    "get_random_quote": {
+      "GET_RANDOM_QUOTE00": {
+        "quote": "sa"
+      },
+      "GET_RANDOM_QUOTE01": {
+        "quote": "s14"
+      },
+      "GET_RANDOM_QUOTE02": {
+        "quote": "s1e"
+      }
+    }
+  },
+  "new": {
+    "get_random_quote": {
+      "get_random_quote_ref01": {
+        "quote": "s28"
+      }
+    }
+  }
+}

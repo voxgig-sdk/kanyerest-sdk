@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "kanye.rest",
+    "description": "A free REST API for random Kanye West quotes (Kanye as a Service)",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://kanye.rest/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.kanye.rest",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get a random Kanye West quote",
+        "description": "Returns a random Kanye West quote",
+        "operationId": "getRandomQuote",
+        "responses": {
+          "200": {
+            "description": "Successful response with a random Kanye West quote",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "description": "A random Kanye West quote",
+                      "example": "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle"
+                    }
+                  },
+                  "required": [
+                    "quote"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Quotes"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Quotes",
+      "description": "Operations related to Kanye West quotes"
+    }
+  ]
+}
