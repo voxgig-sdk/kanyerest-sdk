@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/kanyerest-sdk"
-	"github.com/voxgig-sdk/kanyerest-sdk/core"
+	sdk "github.com/voxgig-sdk/kanyerest-sdk/go"
+	"github.com/voxgig-sdk/kanyerest-sdk/go/core"
 )
 
 func TestGetRandomQuoteDirect(t *testing.T) {

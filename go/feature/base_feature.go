@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/kanyerest-sdk/core"
+	"github.com/voxgig-sdk/kanyerest-sdk/go/core"
 )
 
 type BaseFeature struct {

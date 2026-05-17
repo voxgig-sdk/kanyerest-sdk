@@ -2,13 +2,16 @@
   "existing": {
     "get_random_quote": {
       "GET_RANDOM_QUOTE00": {
-        "quote": "sa"
+        "quote": "sa",
+        "id": "GET_RANDOM_QUOTE00"
       },
       "GET_RANDOM_QUOTE01": {
-        "quote": "s14"
+        "quote": "s14",
+        "id": "GET_RANDOM_QUOTE01"
       },
       "GET_RANDOM_QUOTE02": {
-        "quote": "s1e"
+        "quote": "s1e",
+        "id": "GET_RANDOM_QUOTE02"
       }
     }
   },
