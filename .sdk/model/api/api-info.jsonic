@@ -16,8 +16,26 @@ main: {
       ]
       title: "kanye.rest"
       version: "1.0.0"
+      tagline: "Fetch a random Kanye West quote with a single GET request"
+      homepage: "https://kanye.rest"
+      docs_url: "https://kanye.rest"
+      license_short: "No licence specified by the provider"
+      license_md: `- The kanye.rest service does not publish an explicit licence for the quotes it returns.
+- Quotes are statements attributed to Kanye West; attribution to the original speaker is appropriate where used.
+- Treat the data as informally provided and verify usage rights before commercial reuse.`
+      about_md: `[kanye.rest](https://kanye.rest) is a free, no-auth REST service that returns a random quotation attributed to Kanye West. It is marketed as "Kanye as a Service" and is intended primarily as a fun, lightweight API for demos, tutorials, and toy projects.
+
+What you get from the API:
+
+- A single random quote, returned as JSON with a \`quote\` string field.
+- A single endpoint: \`GET /\` on \`https://api.kanye.rest\`.
+- CORS is enabled, so the endpoint is callable directly from browser JavaScript.
+
+Operational notes: the service is monitored by the FreePublicAPIs community catalogue, which reports a sub-200 ms average response time and high reliability. No API key or authentication is required, and no published rate-limit policy is documented; please be considerate with traffic volume.`
+      entity_desc: {
+        get_random_quote: "Returns a single random Kanye West quote as JSON via `GET https://api.kanye.rest/`."
+      }
+      auth: false
     }
   }
-}
-
 }

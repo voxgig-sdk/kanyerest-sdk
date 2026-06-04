@@ -59,14 +59,12 @@ def _get_random_quote_direct_setup(mockres):
     env = runner.env_override({
         "KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID": {},
         "KANYEREST_TEST_LIVE": "FALSE",
-        "KANYEREST_APIKEY": "NONE",
     })
 
     live = env.get("KANYEREST_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("KANYEREST_APIKEY"),
         }
         client = KanyerestSDK(merged_opts)
         return {

@@ -74,14 +74,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID': {},
     'KANYEREST_TEST_LIVE': 'FALSE',
-    'KANYEREST_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.KANYEREST_TEST_LIVE
 
   if (live) {
     const client = new KanyerestSDK({
-      apikey: env.KANYEREST_APIKEY,
     })
 
     let idmap: any = env['KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID']

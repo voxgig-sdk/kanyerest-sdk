@@ -17,9 +17,7 @@ loading a specific record.
 ```ts
 import { KanyerestSDK } from 'kanyerest'
 
-const client = new KanyerestSDK({
-  apikey: process.env.KANYEREST_APIKEY,
-})
+const client = new KanyerestSDK({})
 ```
 
 ### 3. Load a getrandomquote
@@ -82,7 +80,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new KanyerestSDK({ apikey: '...' })
+const client = new KanyerestSDK()
 const testClient = client.tester()
 ```
 
@@ -118,7 +116,6 @@ const logger = {
 }
 
 const client = new KanyerestSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -129,7 +126,6 @@ Create a `.env.local` file at the project root:
 
 ```
 KANYEREST_TEST_LIVE=TRUE
-KANYEREST_APIKEY=<your-key>
 ```
 
 Then run:
@@ -147,7 +143,6 @@ cd ts && npm test
 
 ```ts
 new KanyerestSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -158,7 +153,6 @@ new KanyerestSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

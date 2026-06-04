@@ -91,7 +91,6 @@ def _get_random_quote_basic_setup(extra):
         "KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID": idmap,
         "KANYEREST_TEST_LIVE": "FALSE",
         "KANYEREST_TEST_EXPLAIN": "FALSE",
-        "KANYEREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +101,6 @@ def _get_random_quote_basic_setup(extra):
     if env.get("KANYEREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KANYEREST_APIKEY"),
             },
             extra or {},
         ])
