@@ -1,20 +1,8 @@
 # Kanyerest SDK
 
-Fetch a random Kanye West quote with a single GET request
+kanye.rest client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About kanye.rest
-
-[kanye.rest](https://kanye.rest) is a free, no-auth REST service that returns a random quotation attributed to Kanye West. It is marketed as "Kanye as a Service" and is intended primarily as a fun, lightweight API for demos, tutorials, and toy projects.
-
-What you get from the API:
-
-- A single random quote, returned as JSON with a `quote` string field.
-- A single endpoint: `GET /` on `https://api.kanye.rest`.
-- CORS is enabled, so the endpoint is callable directly from browser JavaScript.
-
-Operational notes: the service is monitored by the FreePublicAPIs community catalogue, which reports a sub-200 ms average response time and high reliability. No API key or authentication is required, and no published rate-limit policy is documented; please be considerate with traffic volume.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install kanyerest-sdk
 luarocks install kanyerest-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { KanyerestSDK } from 'kanyerest'
 
-const client = new KanyerestSDK({})
+const client = new KanyerestSDK({
+  apikey: process.env.KANYEREST_APIKEY,
+})
 
+// Load getrandomquote data
+const getrandomquote = await client.GetRandomQuote().load({})
+console.log(getrandomquote.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetRandomQuote** | Returns a single random Kanye West quote as JSON via `GET https://api.kanye.rest/`. | `/` |
+| **GetRandomQuote** |  | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from kanyerest_sdk import KanyerestSDK
 
-client = KanyerestSDK({})
+client = KanyerestSDK({
+    "apikey": os.environ.get("KANYEREST_APIKEY"),
+})
 
 
 # Load a specific getrandomquote
-getrandomquote, err = client.GetRandomQuote(None).load(
-    {"id": "example_id"}, None
-)
+getrandomquote, err = client.GetRandomQuote().load({"id": "example_id"})
+print(getrandomquote)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ getrandomquote, err = client.GetRandomQuote(None).load(
 <?php
 require_once 'kanyerest_sdk.php';
 
-$client = new KanyerestSDK([]);
+$client = new KanyerestSDK([
+    "apikey" => getenv("KANYEREST_APIKEY"),
+]);
 
 
 // Load a specific getrandomquote
-[$getrandomquote, $err] = $client->GetRandomQuote(null)->load(
-    ["id" => "example_id"], null
-);
+[$getrandomquote, $err] = $client->GetRandomQuote()->load(["id" => "example_id"]);
+print_r($getrandomquote);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new KanyerestSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/kanyerest-sdk/go"
 
-client := sdk.NewKanyerestSDK(map[string]any{})
+client := sdk.NewKanyerestSDK(map[string]any{
+    "apikey": os.Getenv("KANYEREST_APIKEY"),
+})
 
+// Load getrandomquote data
+getrandomquote, err := client.GetRandomQuote(nil).Load(map[string]any{}, nil)
+fmt.Println(getrandomquote)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewKanyerestSDK(map[string]any{})
 ```ruby
 require_relative "Kanyerest_sdk"
 
-client = KanyerestSDK.new({})
+client = KanyerestSDK.new({
+  "apikey" => ENV["KANYEREST_APIKEY"],
+})
 
 
 # Load a specific getrandomquote
-getrandomquote, err = client.GetRandomQuote(nil).load(
-  { "id" => "example_id" }, nil
-)
+getrandomquote, err = client.GetRandomQuote().load({ "id" => "example_id" })
+puts getrandomquote
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ getrandomquote, err = client.GetRandomQuote(nil).load(
 ```lua
 local sdk = require("kanyerest_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("KANYEREST_APIKEY"),
+})
 
 
 -- Load a specific getrandomquote
-local getrandomquote, err = client:GetRandomQuote(nil):load(
-  { id = "example_id" }, nil
-)
+local getrandomquote, err = client:GetRandomQuote():load({ id = "example_id" })
+print(getrandomquote)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.GetRandomQuote().load({ id: 'test01' })
 ### Python
 
 ```python
-client = KanyerestSDK.test(None, None)
-result, err = client.GetRandomQuote(None).load(
-    {"id": "test01"}, None
-)
+client = KanyerestSDK.test()
+result, err = client.GetRandomQuote().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = KanyerestSDK::test(null, null);
-[$result, $err] = $client->GetRandomQuote(null)->load(
-    ["id" => "test01"], null
-);
+$client = KanyerestSDK::test();
+[$result, $err] = $client->GetRandomQuote()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetRandomQuote(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.GetRandomQuote(nil).Load(
 ### Ruby
 
 ```ruby
-client = KanyerestSDK.test(nil, nil)
-result, err = client.GetRandomQuote(nil).load(
-  { "id" => "test01" }, nil
-)
+client = KanyerestSDK.test
+result, err = client.GetRandomQuote().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetRandomQuote(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetRandomQuote():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,14 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the kanye.rest
-
-- Upstream: [https://kanye.rest](https://kanye.rest)
-
-- The kanye.rest service does not publish an explicit licence for the quotes it returns.
-- Quotes are statements attributed to Kanye West; attribution to the original speaker is appropriate where used.
-- Treat the data as informally provided and verify usage rights before commercial reuse.
 
 ---
 

@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID': idmap,
     'KANYEREST_TEST_LIVE': 'FALSE',
     'KANYEREST_TEST_EXPLAIN': 'FALSE',
+    'KANYEREST_APIKEY': 'NONE',
   })
 
   idmap = env['KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new KanyerestSDK(merge([
       {
+        apikey: env.KANYEREST_APIKEY,
       },
       extra
     ]))
