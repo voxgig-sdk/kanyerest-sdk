@@ -10,7 +10,7 @@ The Lua SDK for the Kanyerest API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install kanyerest-sdk
+luarocks install voxgig-sdk-kanyerest
 ```
 
 If the module is not yet published, add the source directory to

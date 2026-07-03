@@ -8,12 +8,14 @@ source = {
   dir = "kanyerest-sdk/lua"
 }
 description = {
-  summary = "Kanyerest SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the kanye.rest public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/kanyerest-sdk",
+  issues_url = "https://github.com/voxgig-sdk/kanyerest-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "kanyerest" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

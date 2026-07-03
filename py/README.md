@@ -10,7 +10,7 @@ The Python SDK for the Kanyerest API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install kanyerest-sdk
+pip install voxgig-sdk-kanyerest
 ```
 
 Or install from source:

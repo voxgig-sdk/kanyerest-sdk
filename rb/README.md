@@ -10,13 +10,13 @@ The Ruby SDK for the Kanyerest API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install kanyerest-sdk
+gem install voxgig-sdk-kanyerest
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "kanyerest-sdk"
+gem "voxgig-sdk-kanyerest"
 ```
 
 Then run:

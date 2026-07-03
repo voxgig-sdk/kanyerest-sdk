@@ -10,7 +10,7 @@ The TypeScript SDK for the Kanyerest API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install kanyerest
+npm install @voxgig-sdk/kanyerest
 ```
 ## Tutorial: your first API call
 
