@@ -245,6 +245,9 @@ func (sdk *KanyerestSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// GetRandomQuote returns a GetRandomQuote entity bound to this client.
+// Idiomatic usage: client.GetRandomQuote(nil).List(nil, nil) or
+// client.GetRandomQuote(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *KanyerestSDK) GetRandomQuote(data map[string]any) KanyerestEntity {
 	return NewGetRandomQuoteEntityFunc(sdk, data)
 }

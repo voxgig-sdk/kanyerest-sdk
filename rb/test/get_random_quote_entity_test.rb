@@ -42,8 +42,7 @@ class GetRandomQuoteEntityTest < Minitest::Test
     # LOAD
     get_random_quote_ref01_ent = client.GetRandomQuote(nil)
     get_random_quote_ref01_match_dt0 = {}
-    get_random_quote_ref01_data_dt0_loaded, err = get_random_quote_ref01_ent.load(get_random_quote_ref01_match_dt0, nil)
-    assert_nil err
+    get_random_quote_ref01_data_dt0_loaded = get_random_quote_ref01_ent.load(get_random_quote_ref01_match_dt0, nil)
     assert !get_random_quote_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def get_random_quote_basic_setup(extra)
     "KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID" => idmap,
     "KANYEREST_TEST_LIVE" => "FALSE",
     "KANYEREST_TEST_EXPLAIN" => "FALSE",
-    "KANYEREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def get_random_quote_basic_setup(extra)
   if env["KANYEREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["KANYEREST_APIKEY"],
       },
       extra || {},
     ])

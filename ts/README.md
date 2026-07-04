@@ -9,9 +9,12 @@ The TypeScript SDK for the Kanyerest API — a type-safe, entity-oriented client
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/kanyerest
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/kanyerest-sdk/releases](https://github.com/voxgig-sdk/kanyerest-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { KanyerestSDK } from 'kanyerest'
+import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
 
-const client = new KanyerestSDK({
-  apikey: process.env.KANYEREST_APIKEY,
-})
+const client = new KanyerestSDK()
 ```
 
 ### 3. Load a getrandomquote
 
 ```ts
-const result = await client.GetRandomQuote().load({ id: 'example_id' })
+const result = await client.getrandomquote.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = KanyerestSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.getrandomquote.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new KanyerestSDK({ apikey: '...' })
+const client = new KanyerestSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.getrandomquote
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new KanyerestSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -134,7 +134,6 @@ Create a `.env.local` file at the project root:
 
 ```
 KANYEREST_TEST_LIVE=TRUE
-KANYEREST_APIKEY=<your-key>
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new KanyerestSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new KanyerestSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -266,7 +263,7 @@ API path: `/`
 
 ### GetRandomQuote
 
-Create an instance: `const get_random_quote = client.GetRandomQuote()`
+Create an instance: `const get_random_quote = client.get_random_quote`
 
 #### Operations
 
@@ -283,7 +280,7 @@ Create an instance: `const get_random_quote = client.GetRandomQuote()`
 #### Example: Load
 
 ```ts
-const get_random_quote = await client.GetRandomQuote().load({ id: 'get_random_quote_id' })
+const get_random_quote = await client.get_random_quote.load({ id: 'get_random_quote_id' })
 ```
 
 
@@ -344,7 +341,7 @@ kanyerest/
 Import the SDK from the package root:
 
 ```ts
-import { KanyerestSDK } from 'kanyerest'
+import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
 ```
 
 ### Entity state
@@ -354,11 +351,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const getrandomquote = client.getrandomquote
+await getrandomquote.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// getrandomquote.data() now returns the loaded getrandomquote data
+// getrandomquote.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

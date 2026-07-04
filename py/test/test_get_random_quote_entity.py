@@ -49,8 +49,7 @@ class TestGetRandomQuoteEntity:
         # LOAD
         get_random_quote_ref01_ent = client.GetRandomQuote(None)
         get_random_quote_ref01_match_dt0 = {}
-        get_random_quote_ref01_data_dt0_loaded, err = get_random_quote_ref01_ent.load(get_random_quote_ref01_match_dt0, None)
-        assert err is None
+        get_random_quote_ref01_data_dt0_loaded = get_random_quote_ref01_ent.load(get_random_quote_ref01_match_dt0, None)
         assert get_random_quote_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _get_random_quote_basic_setup(extra):
         "KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID": idmap,
         "KANYEREST_TEST_LIVE": "FALSE",
         "KANYEREST_TEST_EXPLAIN": "FALSE",
-        "KANYEREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _get_random_quote_basic_setup(extra):
     if env.get("KANYEREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("KANYEREST_APIKEY"),
             },
             extra or {},
         ])

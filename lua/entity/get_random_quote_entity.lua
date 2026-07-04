@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GetRandomQuoteLoadMatch
+---@param ctrl? table
+---@return GetRandomQuote
+---@return string? err
 function GetRandomQuoteEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

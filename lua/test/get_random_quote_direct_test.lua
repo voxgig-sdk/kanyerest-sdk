@@ -62,14 +62,12 @@ function get_random_quote_direct_setup(mockres)
   local env = runner.env_override({
     ["KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID"] = {},
     ["KANYEREST_TEST_LIVE"] = "FALSE",
-    ["KANYEREST_APIKEY"] = "NONE",
   })
 
   local live = env["KANYEREST_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["KANYEREST_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

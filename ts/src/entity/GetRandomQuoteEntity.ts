@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetRandomQuote,
+  GetRandomQuoteLoadMatch,
+} from '../KanyerestTypes'
 
 // TODO: needs Entity superclass
-class GetRandomQuoteEntity extends KanyerestEntityBase {
+class GetRandomQuoteEntity extends KanyerestEntityBase<GetRandomQuote> {
 
   constructor(client: KanyerestSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetRandomQuoteEntity extends KanyerestEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetRandomQuoteLoadMatch, ctrl?: Control): Promise<GetRandomQuote> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetRandomQuoteEntity extends KanyerestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetRandomQuote> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

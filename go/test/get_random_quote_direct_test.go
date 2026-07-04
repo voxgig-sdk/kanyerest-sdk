@@ -99,14 +99,12 @@ func get_random_quoteDirectSetup(mockres any) *get_random_quoteDirectSetupResult
 	env := envOverride(map[string]any{
 		"KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID": map[string]any{},
 		"KANYEREST_TEST_LIVE":    "FALSE",
-		"KANYEREST_APIKEY":       "NONE",
 	})
 
 	live := env["KANYEREST_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["KANYEREST_APIKEY"],
 		}
 		client := sdk.NewKanyerestSDK(mergedOpts)
 

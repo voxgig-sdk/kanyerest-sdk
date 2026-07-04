@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `KanyerestSDK.test()`.
 ## GetRandomQuoteEntity
 
 ```ts
-const get_random_quote = client.GetRandomQuote()
+const get_random_quote = client.get_random_quote
 ```
 
 ### Fields
@@ -126,7 +125,7 @@ const get_random_quote = client.GetRandomQuote()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetRandomQuote().load({ id: 'get_random_quote_id' })
+const result = await client.get_random_quote.load({ id: 'get_random_quote_id' })
 ```
 
 ### Common Methods

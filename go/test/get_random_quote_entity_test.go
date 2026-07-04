@@ -117,7 +117,6 @@ func get_random_quoteBasicSetup(extra map[string]any) *entityTestSetup {
 		"KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID": idmap,
 		"KANYEREST_TEST_LIVE":      "FALSE",
 		"KANYEREST_TEST_EXPLAIN":   "FALSE",
-		"KANYEREST_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["KANYEREST_TEST_GET_RANDOM_QUOTE_ENTID"])
@@ -128,7 +127,6 @@ func get_random_quoteBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["KANYEREST_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["KANYEREST_APIKEY"],
 			},
 			extra,
 		})

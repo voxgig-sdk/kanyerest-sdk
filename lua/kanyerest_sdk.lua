@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:get_random_quote():list() / client:get_random_quote():load({ id = ... })
+function KanyerestSDK:get_random_quote(data)
+  local EntityMod = require("entity.get_random_quote_entity")
+  if data == nil then
+    if self._get_random_quote == nil then
+      self._get_random_quote = EntityMod.new(self, nil)
+    end
+    return self._get_random_quote
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:get_random_quote() instead.
 function KanyerestSDK:GetRandomQuote(data)
   local EntityMod = require("entity.get_random_quote_entity")
   return EntityMod.new(self, data)

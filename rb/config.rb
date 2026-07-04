@@ -15,9 +15,6 @@ module KanyerestConfig
       },
       "options" => {
         "base" => "https://api.kanye.rest",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
