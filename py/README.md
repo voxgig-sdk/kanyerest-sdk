@@ -33,10 +33,12 @@ client = KanyerestSDK()
 
 ### 3. Load a getrandomquote
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getrandomquote.load({"id": "example_id"})
-    print(result)
+    getrandomquote = client.GetRandomQuote().load({"id": "example_id"})
+    print(getrandomquote)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = KanyerestSDK.test()
 
-result = client.getrandomquote.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getrandomquote = client.GetRandomQuote().load({"id": "test01"})
+# getrandomquote contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -218,7 +221,7 @@ API path: `/`
 
 ### GetRandomQuote
 
-Create an instance: `const get_random_quote = client.get_random_quote`
+Create an instance: `get_random_quote = client.GetRandomQuote()`
 
 #### Operations
 
@@ -234,8 +237,8 @@ Create an instance: `const get_random_quote = client.get_random_quote`
 
 #### Example: Load
 
-```ts
-const get_random_quote = await client.get_random_quote.load({ id: 'get_random_quote_id' })
+```python
+get_random_quote = client.GetRandomQuote().load({"id": "get_random_quote_id"})
 ```
 
 
@@ -309,7 +312,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getrandomquote = client.getrandomquote
+getrandomquote = client.GetRandomQuote()
 getrandomquote.load({"id": "example_id"})
 
 # getrandomquote.data_get() now returns the loaded getrandomquote data

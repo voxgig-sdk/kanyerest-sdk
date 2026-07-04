@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GetRandomQuoteEntity
 
 ```lua
-local get_random_quote = client:get_random_quote(nil)
+local get_random_quote = client:GetRandomQuote(nil)
 ```
 
 ### Fields
@@ -99,7 +99,7 @@ local get_random_quote = client:get_random_quote(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:get_random_quote():load({ id = "get_random_quote_id" })
+local result, err = client:GetRandomQuote():load({ id = "get_random_quote_id" })
 ```
 
 ### Common Methods

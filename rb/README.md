@@ -32,8 +32,9 @@ client = KanyerestSDK.new
 
 ```ruby
 begin
-  result = client.getrandomquote.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GetRandomQuote record (raises on error).
+  getrandomquote = client.GetRandomQuote.load({ "id" => "example_id" })
+  puts getrandomquote
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = KanyerestSDK.test
+client = KanyerestSDK.test({
+  "entity" => { "getrandomquote" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.getrandomquote.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+getrandomquote = client.GetRandomQuote.load({ "id" => "test01" })
+puts getrandomquote
 ```
 
 ### Use a custom fetch function
@@ -218,7 +223,7 @@ API path: `/`
 
 ### GetRandomQuote
 
-Create an instance: `const get_random_quote = client.get_random_quote`
+Create an instance: `get_random_quote = client.GetRandomQuote`
 
 #### Operations
 
@@ -234,8 +239,9 @@ Create an instance: `const get_random_quote = client.get_random_quote`
 
 #### Example: Load
 
-```ts
-const get_random_quote = await client.get_random_quote.load({ id: 'get_random_quote_id' })
+```ruby
+# load returns the bare GetRandomQuote record (raises on error).
+get_random_quote = client.GetRandomQuote.load({ "id" => "get_random_quote_id" })
 ```
 
 
@@ -310,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getrandomquote = client.getrandomquote
+getrandomquote = client.GetRandomQuote
 getrandomquote.load({ "id" => "example_id" })
 
 # getrandomquote.data_get now returns the loaded getrandomquote data

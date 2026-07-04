@@ -109,7 +109,7 @@ Alias for `KanyerestSDK.test()`.
 ## GetRandomQuoteEntity
 
 ```ts
-const get_random_quote = client.get_random_quote
+const get_random_quote = client.GetRandomQuote()
 ```
 
 ### Fields
@@ -125,7 +125,7 @@ const get_random_quote = client.get_random_quote
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_random_quote.load({ id: 'get_random_quote_id' })
+const result = await client.GetRandomQuote().load({ id: 'get_random_quote_id' })
 ```
 
 ### Common Methods

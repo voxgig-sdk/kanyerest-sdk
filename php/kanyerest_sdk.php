@@ -233,10 +233,10 @@ class KanyerestSDK
 
     private $_get_random_quote = null;
 
-    // Idiomatic facade: $client->get_random_quote()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetRandomQuote() (PHP method
-    // names are case-insensitive).
-    public function get_random_quote($data = null)
+    // Canonical facade: $client->GetRandomQuote()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_random_quote()
+    // resolves here too.
+    public function GetRandomQuote($data = null)
     {
         require_once __DIR__ . '/entity/get_random_quote_entity.php';
         if ($data === null) {

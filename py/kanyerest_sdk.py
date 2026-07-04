@@ -220,25 +220,15 @@ class KanyerestSDK:
         }
 
 
-    @property
-    def get_random_quote(self):
-        """Idiomatic facade: client.get_random_quote.list() / client.get_random_quote.load({"id": ...})."""
-        from entity.get_random_quote_entity import GetRandomQuoteEntity
-        cached = getattr(self, "_get_random_quote", None)
-        if cached is None:
-            cached = GetRandomQuoteEntity(self, None)
-            self._get_random_quote = cached
-        return cached
-
-    def GetRandomQuote(self, data=None):
-        # Deprecated: use client.get_random_quote instead.
+    def GetRandomQuote(self, data=None) -> "GetRandomQuoteEntity":
+        """Entity factory: client.GetRandomQuote().list({}) / client.GetRandomQuote().load({"id": ...})."""
         from entity.get_random_quote_entity import GetRandomQuoteEntity
         return GetRandomQuoteEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "KanyerestSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class KanyerestSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_random_quote_entity import GetRandomQuoteEntity

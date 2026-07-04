@@ -26,9 +26,9 @@ import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
 
 const client = new KanyerestSDK()
 
-// Load getrandomquote data
-const getrandomquote = await client.getrandomquote.load({})
-console.log(getrandomquote.data)
+// Load getrandomquote data (returns a GetRandomQuote)
+const getrandomquote = await client.GetRandomQuote().load()
+console.log(getrandomquote)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from kanyerest_sdk import KanyerestSDK
 client = KanyerestSDK()
 
 
-# Load a specific getrandomquote
-getrandomquote = client.getrandomquote.load({"id": "example_id"})
+# Load a specific getrandomquote (returns the record, raises on error)
+getrandomquote = client.GetRandomQuote().load({"id": "example_id"})
 print(getrandomquote)
 ```
 
@@ -98,8 +98,8 @@ require_once 'kanyerest_sdk.php';
 $client = new KanyerestSDK();
 
 
-// Load a specific getrandomquote
-$getrandomquote = $client->getrandomquote()->load(["id" => "example_id"]);
+// Load a specific getrandomquote (returns the bare record; throws on error)
+$getrandomquote = $client->GetRandomQuote()->load(["id" => "example_id"]);
 print_r($getrandomquote);
 ```
 
@@ -123,8 +123,8 @@ require_relative "Kanyerest_sdk"
 client = KanyerestSDK.new
 
 
-# Load a specific getrandomquote
-getrandomquote = client.getrandomquote.load({ "id" => "example_id" })
+# Load a specific getrandomquote (returns the bare record; raises on error)
+getrandomquote = client.GetRandomQuote.load({ "id" => "example_id" })
 puts getrandomquote
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getrandomquote
-local getrandomquote, err = client:getrandomquote():load({ id = "example_id" })
+local getrandomquote, err = client:GetRandomQuote():load({ id = "example_id" })
 print(getrandomquote)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = KanyerestSDK.test()
-const result = await client.getrandomquote.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getrandomquote = await client.GetRandomQuote().load({ id: 'test01' })
+// getrandomquote is a bare GetRandomQuote populated with mock data
+console.log(getrandomquote)
 ```
 
 ### Python
 
 ```python
 client = KanyerestSDK.test()
-result = client.getrandomquote.load({"id": "test01"})
+getrandomquote = client.GetRandomQuote().load({"id": "test01"})
+print(getrandomquote)
 ```
 
 ### PHP
 
 ```php
-$client = KanyerestSDK::test();
-$result = $client->getrandomquote()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = KanyerestSDK::test([
+    "entity" => ["getrandomquote" => ["test01" => ["id" => "test01"]]],
+]);
+$getrandomquote = $client->GetRandomQuote()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetRandomQuote(nil).Load(
 ### Ruby
 
 ```ruby
-client = KanyerestSDK.test
-result = client.getrandomquote.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = KanyerestSDK.test({
+  "entity" => { "getrandomquote" => { "test01" => { "id" => "test01" } } },
+})
+getrandomquote = client.GetRandomQuote.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getrandomquote():load({ id = "test01" })
+local result, err = client:GetRandomQuote():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

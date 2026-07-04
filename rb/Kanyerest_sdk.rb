@@ -208,13 +208,7 @@ class KanyerestSDK
   end
 
 
-  # Idiomatic facade: client.get_random_quote.list / client.get_random_quote.load({ "id" => ... })
-  def get_random_quote
-    require_relative 'entity/get_random_quote_entity'
-    @get_random_quote ||= GetRandomQuoteEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_random_quote instead.
+  # Canonical facade: client.GetRandomQuote.list / client.GetRandomQuote.load({ "id" => ... })
   def GetRandomQuote(data = nil)
     require_relative 'entity/get_random_quote_entity'
     GetRandomQuoteEntity.new(self, data)

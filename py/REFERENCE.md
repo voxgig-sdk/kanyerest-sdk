@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetRandomQuoteEntity
 
 ```python
-get_random_quote = client.get_random_quote
+get_random_quote = client.GetRandomQuote()
 ```
 
 ### Fields
@@ -96,7 +96,7 @@ get_random_quote = client.get_random_quote
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_random_quote.load({"id": "get_random_quote_id"})
+result = client.GetRandomQuote().load({"id": "get_random_quote_id"})
 ```
 
 ### Common Methods

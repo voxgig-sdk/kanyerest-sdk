@@ -204,14 +204,7 @@ class KanyerestSDK {
 
 
 
-  _get_random_quote?: GetRandomQuoteEntity
-
-  // Idiomatic facade: `client.get_random_quote.list()` / `client.get_random_quote.load({ id })`.
-  get get_random_quote(): GetRandomQuoteEntity {
-    return (this._get_random_quote ??= new GetRandomQuoteEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_random_quote` instead. */
+  // Entity access: `client.GetRandomQuote().list()` / `client.GetRandomQuote().load({ id })`.
   GetRandomQuote(data?: any) {
     const self = this
     return new GetRandomQuoteEntity(self,data)
