@@ -13,8 +13,7 @@ type GetRandomQuote struct {
 	Quote string `json:"quote"`
 }
 
-// GetRandomQuoteLoadMatch mirrors the get_random_quote fields as an all-optional match
-// filter (Go analog of Partial<GetRandomQuote>).
+// GetRandomQuoteLoadMatch is the typed request payload for GetRandomQuote.LoadTyped.
 type GetRandomQuoteLoadMatch struct {
 	Quote *string `json:"quote,omitempty"`
 }

@@ -45,11 +45,11 @@ $client = KanyerestSDK::test();
 
 Create a new `GetRandomQuoteEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): KanyerestUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,7 +92,7 @@ $get_random_quote = $client->GetRandomQuote();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -101,24 +101,24 @@ $get_random_quote = $client->GetRandomQuote();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->GetRandomQuote()->load(["id" => "get_random_quote_id"]);
+$result = $client->GetRandomQuote()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -127,7 +127,7 @@ Set the entity match criteria.
 Create a new `GetRandomQuoteEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

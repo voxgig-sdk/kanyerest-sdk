@@ -9,5 +9,7 @@ export interface GetRandomQuote {
   quote: string
 }
 
-export type GetRandomQuoteLoadMatch = Partial<GetRandomQuote>
+export interface GetRandomQuoteLoadMatch {
+  quote?: string
+}
 

@@ -116,7 +116,7 @@ const get_random_quote = client.GetRandomQuote()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -125,7 +125,7 @@ const get_random_quote = client.GetRandomQuote()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetRandomQuote().load({ id: 'get_random_quote_id' })
+const result = await client.GetRandomQuote().load()
 ```
 
 ### Common Methods

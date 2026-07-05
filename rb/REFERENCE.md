@@ -8,7 +8,7 @@ Complete API reference for the Kanyerest Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'kanyerest_sdk'
+require_relative 'Kanyerest_sdk'
 
 client = KanyerestSDK.new(options)
 ```
@@ -93,7 +93,7 @@ get_random_quote = client.GetRandomQuote
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `String` | Yes |  |
 
 ### Operations
 
@@ -102,7 +102,7 @@ get_random_quote = client.GetRandomQuote
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GetRandomQuote.load({ "id" => "get_random_quote_id" })
+result = client.GetRandomQuote.load()
 ```
 
 ### Common Methods

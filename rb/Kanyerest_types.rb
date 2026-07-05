@@ -17,7 +17,7 @@ GetRandomQuote = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetRandomQuote#load (any subset of GetRandomQuote fields).
+# Request payload for GetRandomQuote#load.
 #
 # @!attribute [rw] quote
 #   @return [String, nil]

@@ -221,7 +221,7 @@ class KanyerestSDK:
 
 
     def GetRandomQuote(self, data=None) -> "GetRandomQuoteEntity":
-        """Entity factory: client.GetRandomQuote().list({}) / client.GetRandomQuote().load({"id": ...})."""
+        """Entity factory: client.GetRandomQuote().list() / client.GetRandomQuote().load({"id": ...})."""
         from entity.get_random_quote_entity import GetRandomQuoteEntity
         return GetRandomQuoteEntity(self, data)
 

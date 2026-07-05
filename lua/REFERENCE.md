@@ -90,7 +90,7 @@ local get_random_quote = client:GetRandomQuote(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -99,7 +99,7 @@ local get_random_quote = client:GetRandomQuote(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetRandomQuote():load({ id = "get_random_quote_id" })
+local result, err = client:GetRandomQuote():load()
 ```
 
 ### Common Methods

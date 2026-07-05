@@ -10,6 +10,7 @@
 ---@field quote string
 
 ---@class GetRandomQuoteLoadMatch
+---@field quote? string
 
 local M = {}
 

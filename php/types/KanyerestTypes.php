@@ -18,7 +18,7 @@ class GetRandomQuote
     public string $quote;
 }
 
-/** Match filter for GetRandomQuote#load (any subset of GetRandomQuote fields). */
+/** Request payload for GetRandomQuote#load. */
 class GetRandomQuoteLoadMatch
 {
     public ?string $quote = null;

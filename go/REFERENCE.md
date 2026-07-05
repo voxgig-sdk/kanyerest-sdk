@@ -97,7 +97,7 @@ get_random_quote := client.GetRandomQuote(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ get_random_quote := client.GetRandomQuote(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GetRandomQuote(nil).Load(map[string]any{"id": "get_random_quote_id"}, nil)
+result, err := client.GetRandomQuote(nil).Load(nil, nil)
 ```
 
 ### Common Methods

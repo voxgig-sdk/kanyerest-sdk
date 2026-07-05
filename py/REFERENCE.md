@@ -87,7 +87,7 @@ get_random_quote = client.GetRandomQuote()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | ``$STRING`` | Yes |  |
+| `quote` | `str` | Yes |  |
 
 ### Operations
 
@@ -96,7 +96,7 @@ get_random_quote = client.GetRandomQuote()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GetRandomQuote().load({"id": "get_random_quote_id"})
+result = client.GetRandomQuote().load()
 ```
 
 ### Common Methods
