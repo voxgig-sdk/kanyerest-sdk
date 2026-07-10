@@ -15,9 +15,9 @@ main: {
           url: "https://api.kanye.rest"
         }
       ]
+      summary: "A free REST API for random Kanye West quotes (Kanye as a Service)"
       title: "kanye.rest"
       version: "1.0.0"
+      website: "https://kanye.rest"
     }
   }
-}
-

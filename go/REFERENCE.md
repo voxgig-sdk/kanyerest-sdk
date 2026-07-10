@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GetRandomQuoteEntity
 
 ```go
-get_random_quote := client.GetRandomQuote(nil)
+getRandomQuote := client.GetRandomQuote(nil)
+fmt.Println(getRandomQuote.GetName()) // "get_random_quote"
 ```
 
 ### Fields
@@ -107,6 +108,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetRandomQuote(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

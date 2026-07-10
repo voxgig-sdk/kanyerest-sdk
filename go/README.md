@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single getrandomquote — the value is the loaded record.
-    getrandomquote, err := client.GetRandomQuote(nil).Load(nil, nil)
+    // Load a single getRandomQuote — the value is the loaded record.
+    getRandomQuote, err := client.GetRandomQuote(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(getrandomquote)
+    fmt.Println(getRandomQuote)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getrandomquote, err := client.GetRandomQuote(nil).Load(
+getRandomQuote, err := client.GetRandomQuote(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getrandomquote) // the returned mock data
+fmt.Println(getRandomQuote) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getrandomquote, err := client.GetRandomQuote(nil).Load(nil, nil)
+    getRandomQuote, err := client.GetRandomQuote(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // getrandomquote is the returned record
+    // getRandomQuote is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -271,7 +271,7 @@ API path: `/`
 
 ### GetRandomQuote
 
-Create an instance: `get_random_quote := client.GetRandomQuote(nil)`
+Create an instance: `getRandomQuote := client.GetRandomQuote(nil)`
 
 #### Operations
 
@@ -288,11 +288,11 @@ Create an instance: `get_random_quote := client.GetRandomQuote(nil)`
 #### Example: Load
 
 ```go
-get_random_quote, err := client.GetRandomQuote(nil).Load(nil, nil)
+getRandomQuote, err := client.GetRandomQuote(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_random_quote) // the loaded record
+fmt.Println(getRandomQuote) // the loaded record
 ```
 
 
