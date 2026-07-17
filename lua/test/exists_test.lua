@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Kanyerest SDK exists test
 
 local sdk = require("kanyerest_sdk")
 
