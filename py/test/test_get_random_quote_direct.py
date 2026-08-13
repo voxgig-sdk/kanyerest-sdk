@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from kanyerest_sdk.utility.voxgig_struct import voxgig_struct as vs
 from kanyerest_sdk import KanyerestSDK
-from core import helpers
+from kanyerest_sdk.core import helpers
 from test import runner
 
 

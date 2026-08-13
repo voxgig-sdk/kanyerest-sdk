@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import KanyerestSDK
-from core.error import KanyerestError
-from core.result import KanyerestResult
-from core.response import KanyerestResponse
-from core.spec import KanyerestSpec
-from feature.base_feature import KanyerestBaseFeature
+from projectname_sdk.core.error import KanyerestError
+from projectname_sdk.core.result import KanyerestResult
+from projectname_sdk.core.response import KanyerestResponse
+from projectname_sdk.core.spec import KanyerestSpec
+from projectname_sdk.feature.base_feature import KanyerestBaseFeature
 
 
 def _client():

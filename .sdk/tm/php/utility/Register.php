@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ KanyerestUtility::setRegistrar(function (KanyerestUtility $u): void {
     $u->prepare_params = [KanyerestPrepareParams::class, 'call'];
     $u->prepare_path = [KanyerestPreparePath::class, 'call'];
     $u->prepare_query = [KanyerestPrepareQuery::class, 'call'];
+    $u->graphql_body = [KanyerestGraphql::class, 'body'];
+    $u->graphql_errors = [KanyerestGraphql::class, 'errors'];
     $u->result_basic = [KanyerestResultBasic::class, 'call'];
     $u->result_body = [KanyerestResultBody::class, 'call'];
     $u->result_headers = [KanyerestResultHeaders::class, 'call'];

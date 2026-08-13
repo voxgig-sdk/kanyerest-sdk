@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ KanyerestUtility.registrar = ->(u) {
   u.prepare_params = KanyerestUtilities::PrepareParams
   u.prepare_path = KanyerestUtilities::PreparePath
   u.prepare_query = KanyerestUtilities::PrepareQuery
+  u.graphql_body = KanyerestUtilities::GraphqlBody
+  u.graphql_errors = KanyerestUtilities::GraphqlErrors
   u.result_basic = KanyerestUtilities::ResultBasic
   u.result_body = KanyerestUtilities::ResultBody
   u.result_headers = KanyerestUtilities::ResultHeaders

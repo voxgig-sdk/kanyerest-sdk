@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Kanyerest SDK exists test
 
 import pytest
 from kanyerest_sdk import KanyerestSDK

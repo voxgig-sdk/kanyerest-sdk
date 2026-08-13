@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = KanyerestSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = KanyerestSDK.test({
+  entity: {
+    get_random_quote: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getrandomquote = await client.GetRandomQuote().load()
-// getrandomquote is a bare GetRandomQuote populated with mock data
+// getrandomquote is the GetRandomQuote entity, populated with mock data
+// — call getrandomquote.data() for the record itself
 console.log(getrandomquote)
 ```
 
@@ -182,7 +191,7 @@ require_once 'kanyerest_sdk.php';
 $client = new KanyerestSDK();
 
 
-// Load a specific getrandomquote (returns the bare record; throws on error)
+// Load a specific getrandomquote (returns the ENTITY; call data_get() for the record; throws on error)
 $getrandomquote = $client->GetRandomQuote()->load();
 print_r($getrandomquote);
 ```
@@ -210,7 +219,7 @@ require_relative "Kanyerest_sdk"
 client = KanyerestSDK.new
 
 
-# Load a specific getrandomquote (returns the bare record; raises on error)
+# Load a specific getrandomquote (returns the ENTITY; call data_get for the record)
 getrandomquote = client.GetRandomQuote.load()
 puts getrandomquote
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://kanye.rest/](https://kanye.rest/)
 

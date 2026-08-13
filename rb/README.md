@@ -34,7 +34,7 @@ client = KanyerestSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetRandomQuote record (raises on error).
+  # load returns the ENTITY — call data_get for the GetRandomQuote record (raises on error).
   getrandomquote = client.GetRandomQuote.load()
   puts getrandomquote
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = KanyerestSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getrandomquote = client.GetRandomQuote.load()
 puts getrandomquote
 ```
@@ -264,7 +265,7 @@ Create an instance: `get_random_quote = client.GetRandomQuote`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetRandomQuote record (raises on error).
+# load returns the ENTITY — call data_get for the GetRandomQuote record (raises on error).
 get_random_quote = client.GetRandomQuote.load()
 ```
 

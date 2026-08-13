@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = KanyerestSDK.test()
 
 const getrandomquote = await client.GetRandomQuote().load()
-// getrandomquote is a bare entity populated with mock response data
+// getrandomquote is the entity, populated with mock response data
+// — call getrandomquote.data() for the record itself
 console.log(getrandomquote)
 ```
 
