@@ -28,7 +28,7 @@ class KanyerestSDK
     utility = KanyerestUtility.new
     @_utility = utility
 
-    config = KanyerestConfig.make_config
+    config = KanyerestConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

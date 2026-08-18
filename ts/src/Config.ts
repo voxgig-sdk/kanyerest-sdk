@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://api.kanye.rest',
+    base: "https://api.kanye.rest",
 
     headers: {
       "content-type": "application/json"
@@ -55,11 +55,9 @@ class Config {
     "get_random_quote": {
       "fields": [
         {
-          "active": true,
           "name": "quote",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         }
       ],
       "name": "get_random_quote",
@@ -69,7 +67,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -79,11 +76,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

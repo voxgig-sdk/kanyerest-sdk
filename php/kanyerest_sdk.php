@@ -40,7 +40,7 @@ class KanyerestSDK
         $utility = new KanyerestUtility();
         $this->_utility = $utility;
 
-        $config = KanyerestConfig::make_config();
+        $config = KanyerestConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
