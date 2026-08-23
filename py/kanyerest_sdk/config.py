@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Kanyerest",
+            "slug": "kanyerest",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,6 +54,7 @@ def make_config():
           {
             "name": "quote",
             "req": True,
+            "short": "A random Kanye West quote",
             "type": "`$STRING`",
           },
         ],

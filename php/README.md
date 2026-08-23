@@ -245,7 +245,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `quote` |  |
+| `quote` | A random Kanye West quote |
 
 Operations: Load.
 
@@ -270,7 +270,7 @@ Create an instance: `$get_random_quote = $client->GetRandomQuote();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `quote` | `string` |  |
+| `quote` | `string` | A random Kanye West quote |
 
 #### Example: Load
 

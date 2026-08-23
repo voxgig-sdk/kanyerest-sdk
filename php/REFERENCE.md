@@ -92,7 +92,7 @@ $get_random_quote = $client->GetRandomQuote();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | `string` | Yes |  |
+| `quote` | `string` | Yes | A random Kanye West quote |
 
 ### Operations
 

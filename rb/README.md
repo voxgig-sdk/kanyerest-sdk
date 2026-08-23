@@ -235,7 +235,7 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `quote` |  |
+| `quote` | A random Kanye West quote |
 
 Operations: Load.
 
@@ -260,7 +260,7 @@ Create an instance: `get_random_quote = client.GetRandomQuote`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `quote` | `String` |  |
+| `quote` | `String` | A random Kanye West quote |
 
 #### Example: Load
 

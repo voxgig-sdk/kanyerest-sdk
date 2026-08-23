@@ -90,7 +90,7 @@ local get_random_quote = client:GetRandomQuote(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | `string` | Yes |  |
+| `quote` | `string` | Yes | A random Kanye West quote |
 
 ### Operations
 

@@ -93,7 +93,7 @@ get_random_quote = client.GetRandomQuote
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | `String` | Yes |  |
+| `quote` | `String` | Yes | A random Kanye West quote |
 
 ### Operations
 

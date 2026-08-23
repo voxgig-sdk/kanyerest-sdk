@@ -241,7 +241,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `quote` |  |
+| `quote` | A random Kanye West quote |
 
 Operations: Load.
 
@@ -266,7 +266,7 @@ Create an instance: `get_random_quote = client.GetRandomQuote()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `quote` | `str` |  |
+| `quote` | `str` | A random Kanye West quote |
 
 #### Example: Load
 

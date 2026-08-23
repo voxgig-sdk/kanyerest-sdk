@@ -19,6 +19,9 @@ module KanyerestConfig
     {
       "main" => {
         "name" => "Kanyerest",
+        "slug" => "kanyerest",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,6 +45,7 @@ module KanyerestConfig
             {
               "name" => "quote",
               "req" => true,
+              "short" => "A random Kanye West quote",
               "type" => "`$STRING`",
             },
           ],

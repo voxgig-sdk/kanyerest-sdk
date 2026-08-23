@@ -33,6 +33,9 @@ class KanyerestConfig
         return [
             "main" => [
                 "name" => "Kanyerest",
+                "slug" => "kanyerest",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,6 +59,7 @@ class KanyerestConfig
             [
               'name' => 'quote',
               'req' => true,
+              'short' => 'A random Kanye West quote',
               'type' => '`$STRING`',
             ],
           ],

@@ -225,7 +225,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `quote` |  |
+| `quote` | A random Kanye West quote |
 
 Operations: Load.
 
@@ -250,7 +250,7 @@ Create an instance: `local get_random_quote = client:GetRandomQuote(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `quote` | `string` |  |
+| `quote` | `string` | A random Kanye West quote |
 
 #### Example: Load
 

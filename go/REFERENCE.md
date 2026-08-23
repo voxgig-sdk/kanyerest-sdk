@@ -98,7 +98,7 @@ fmt.Println(getRandomQuote.GetName()) // "get_random_quote"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `quote` | `string` | Yes |  |
+| `quote` | `string` | Yes | A random Kanye West quote |
 
 ### Operations
 
