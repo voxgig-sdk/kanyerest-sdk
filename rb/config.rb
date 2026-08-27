@@ -28,6 +28,7 @@ module KanyerestConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
