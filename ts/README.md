@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
+import { KanyerestSDK } from '@voxgig-sdk/kanyerest-sdk'
 
 const client = new KanyerestSDK()
 ```
@@ -401,7 +401,7 @@ kanyerest/
 Import the SDK from the package root:
 
 ```ts
-import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
+import { KanyerestSDK } from '@voxgig-sdk/kanyerest-sdk'
 ```
 
 ### Entity state

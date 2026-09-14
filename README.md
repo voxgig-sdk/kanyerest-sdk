@@ -105,7 +105,7 @@ local result, err = client:GetRandomQuote():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
+| TypeScript | `@voxgig-sdk/kanyerest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
 | Python | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
 | PHP | `voxgig-sdk/kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/kanyerest-sdk/go` | `go get github.com/voxgig-sdk/kanyerest-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetRandomQuote():load()
 ### TypeScript
 
 ```ts
-import { KanyerestSDK } from '@voxgig-sdk/kanyerest'
+import { KanyerestSDK } from '@voxgig-sdk/kanyerest-sdk'
 
 const client = new KanyerestSDK()
 
