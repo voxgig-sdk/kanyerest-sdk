@@ -21,5 +21,38 @@
         "quote": "s28"
       }
     }
+  },
+  "requests": {
+    "GET /": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRandomQuote",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "quote": {
+                      "description": "A random Kanye West quote",
+                      "example": "I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "quote"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with a random Kanye West quote"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

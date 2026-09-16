@@ -1,12 +1,18 @@
 # Kanyerest SDK feature factory
 
 from kanyerest_sdk.feature.base_feature import KanyerestBaseFeature
+from kanyerest_sdk.feature.ratelimit_feature import KanyerestRatelimitFeature
+from kanyerest_sdk.feature.retry_feature import KanyerestRetryFeature
 from kanyerest_sdk.feature.test_feature import KanyerestTestFeature
+from kanyerest_sdk.feature.timeout_feature import KanyerestTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: KanyerestBaseFeature(),
+    "ratelimit": lambda: KanyerestRatelimitFeature(),
+    "retry": lambda: KanyerestRetryFeature(),
     "test": lambda: KanyerestTestFeature(),
+    "timeout": lambda: KanyerestTimeoutFeature(),
 }
 
 
