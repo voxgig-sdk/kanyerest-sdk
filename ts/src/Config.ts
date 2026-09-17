@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      get_random_quote: {
-      },
-
+        get_random_quote: {
+        },
+  
     }
   }
 

@@ -105,12 +105,12 @@ local result, err = client:GetRandomQuote():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/kanyerest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
-| Python | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
-| PHP | `voxgig-sdk/kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
+| TypeScript | `@voxgig-sdk/kanyerest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/tags) |
+| Python | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/tags) |
+| PHP | `voxgig-sdk/kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/kanyerest-sdk/go` | `go get github.com/voxgig-sdk/kanyerest-sdk/go@latest` |
-| Ruby | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
-| Lua | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/releases) |
+| Ruby | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/tags) |
+| Lua | `voxgig-sdk-kanyerest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/kanyerest-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/kanyerest-sdk/go-cli` | `go install github.com/voxgig-sdk/kanyerest-sdk/go-cli/cmd/kanyerest@latest` |
 | Go MCP server | `github.com/voxgig-sdk/kanyerest-sdk/go-mcp` | `go get github.com/voxgig-sdk/kanyerest-sdk/go-mcp@latest` |
 
