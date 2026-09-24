@@ -1,0 +1,41 @@
+# Entity: get_random_quote
+
+main: kit: entity: get_random_quote: {
+
+  alias: field: {}
+
+  fields: {
+    quote: {
+      h: "Quote"
+      n: "quote"
+      r: true
+      sh: "A random Kanye West quote"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_random_quote"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/"
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

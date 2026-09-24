@@ -25,10 +25,6 @@ import {
 } from '../../utility'
 
 
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 loadEnvLocal(__dirname + '/../../../.env.local')
 
 
@@ -55,7 +51,7 @@ describe('GetRandomQuoteEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"quote","req":true,"short":"A random Kanye West quote","type":"`$STRING`","index$":0}],"name":"get_random_quote","op":{"load":{"input":"data","name":"load","points":[{"active":true,"args":{},"contract":{"id":"GET /","json":"{\"operationId\":\"getRandomQuote\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"quote\":{\"description\":\"A random Kanye West quote\",\"example\":\"I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle\",\"type\":\"string\"}},\"required\":[\"quote\"],\"type\":\"object\"}}},\"description\":\"Successful response with a random Kanye West quote\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/","segments":[],"select":{},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"get_random_quote","name__orig":"get_random_quote","Name":"GetRandomQuote","name_":"get_random_quote","name-":"get-random-quote","NAME":"GET_RANDOM_QUOTE","index$":0}, {"active":true,"entity":"get_random_quote","key$":"BasicGetRandomQuoteFlow","kind":"basic","name":"BasicGetRandomQuoteFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"get_random_quote_ref01","srcdatavar":"get_random_quote_ref01_data","suffix":"_dt0"},"match":{},"op":"load","spec":[],"valid":[{"apply":"TextFieldMark","def":{"mark":"Mark01-get_random_quote_ref01"}}],"index$":0}]}, 'GetRandomQuote')
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"quote":{"a":true,"h":"Quote","n":"quote","r":true,"sh":"A random Kanye West quote","t":"`$STRING`","key$":"quote","index$":0}},"name":"get_random_quote","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/","q":{},"r":{},"s":[],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"get_random_quote","name__orig":"get_random_quote","Name":"GetRandomQuote","name_":"get_random_quote","name-":"get-random-quote","NAME":"GET_RANDOM_QUOTE","index$":0}, {"active":true,"entity":"get_random_quote","key$":"BasicGetRandomQuoteFlow","kind":"basic","name":"BasicGetRandomQuoteFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"get_random_quote_ref01","srcdatavar":"get_random_quote_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-get_random_quote_ref01"}}],"index$":0}]}, 'GetRandomQuote', {"GET /":{"protocol":"http","operationId":"getRandomQuote","responses":{"200":{"description":"Successful response with a random Kanye West quote","content":{"application/json":{"schema":{"type":"object","properties":{"quote":{"description":"A random Kanye West quote","example":"I hate when I'm on a flight and I wake up with a water bottle next to me like oh great now I gotta be responsible for this water bottle","key$":"quote","type":"string"}},"required":["quote"],"index$":0}}}}},"parameters":[],"securitySource":"unspecified"}})
     }
     const client = setup.client
     const struct = setup.struct

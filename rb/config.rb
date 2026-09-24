@@ -99,9 +99,10 @@ module KanyerestConfig
           "fields" => [
             {
               "name" => "quote",
+              "title" => "Quote",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "A random Kanye West quote",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "get_random_quote",
@@ -111,17 +112,18 @@ module KanyerestConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "segments" => [],
-                  "select" => {},
+                  "parts" => [],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },

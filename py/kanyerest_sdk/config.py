@@ -116,9 +116,10 @@ def make_config():
         "fields": [
           {
             "name": "quote",
+            "title": "Quote",
+            "type": "`$STRING`",
             "req": True,
             "short": "A random Kanye West quote",
-            "type": "`$STRING`",
           },
         ],
         "name": "get_random_quote",
@@ -128,17 +129,18 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/",
                 "segments": [],
-                "select": {},
+                "parts": [],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [],
+                "args": {},
+                "select": {},
               },
             ],
           },
