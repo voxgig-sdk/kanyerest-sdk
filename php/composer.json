@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/kanyerest",
+  "name": "voxgig-sdk/kanyerest-sdk",
   "description": "Unofficial generated PHP SDK for the kanye.rest public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "kanyerest"],
